@@ -4,15 +4,15 @@
     max-width:1200px;
     margin:20px auto;
     position:relative;
-    display:flex;
+    /* display:flex; */
 }
 #calendarBox h3{padding-left:20px;cursor: pointer;}
 .calendarLeft{
-    width:50%;
+    width:100%;
 }
 
 .calendarRight{
-    width:50%;
+    width:100%;
 }
 
 .cldTable{
@@ -142,7 +142,7 @@
 
 
 
-@media screen and (max-width:1210px){
+/* @media screen and (max-width:1210px){
     #content{
         font-size:12px;
     }
@@ -160,4 +160,4 @@
     .calendarRight{
         width:100%;
     }
-}
+} */
