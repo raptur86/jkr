@@ -34,16 +34,23 @@
     line-height:30px;
     text-align:center;
 }
-.detail_box .date{    width:14%; }
-.detail_box .detail{     width:35%; }
-.detail_box .fluctuate{    width:31%; }
-.detail_box .payment{    width:20%;  }
-
-.detail_box .detail_head>div:nth-child(2){border-left:1px solid #aaa;}
-.detail_box .detail_head>div:nth-child(3){border-left:1px solid #aaa;
-    border-right:1px solid #aaa;}
-
-
+.detail_head .date{    width:14%; }
+.detail_head .detail{ 
+    width:35%; 
+    border-left:1px solid #aaa;
+}
+.detail_head .fluctuate{
+    width:31%;
+    border-left:1px solid #aaa;
+    border-right:1px solid #aaa;
+}
+.detail_head .payment{
+    width:20%;
+}
+.detail_box .detail_write{
+    display:flex;
+    width:100%;
+}
 .detail_box .detail_list{
 
 }
@@ -166,35 +173,8 @@
 .nowBalanse .totalMoney li{    padding-right:5px; }
 
 
-#write_modal{
-    display:none;
-    width:100%;
-    height:100%;
-    position:fixed;
-    top:0; left:0;
-}
-#write_modal #write_bg{
-    position:absolute;
-    background:rgba(100,100,100,0.6);
-    width:100%;
-    height:100%;
-}
-#write_modal #detail_write{
-    position:absolute;
-    background:#00f3a2;
-    padding:15px;
-    border-radius: 10px;
-    width:90%;
-    top:50%;
-    left:50%;
-    transform: translate(-50%,-50%);
-}
 
 
-
-#detail_write .noneAttr{
-    display:none;
-}
 
 #foot_wrap{
     margin-top:50px;
