@@ -47,9 +47,30 @@
                     </div>
                     
                     <div class="detail_list">
-                        <ul>
+                        <ul class="detail_list_frame">
                             <li>
-
+                                <span class="date date_list">11일</span>
+                                <b class="detail detail_list">마트</b>
+                                <b class="fluctuate fluctuate_list"><b class="text-danger">-</b>25,500</b>
+                                <span class="payment payment_list">우리</span>
+                            </li>
+                            <li>
+                                <span class="date date_list">11일</span>
+                                <b class="detail detail_list">마트</b>
+                                <b class="fluctuate fluctuate_list "><b class="text-danger">-</b>9,825,500원</b>
+                                <span class="payment payment_list">우리</span>
+                            </li>
+                            <li>
+                                <span class="date date_list">11일</span>
+                                <b class="detail detail_list">마트</b>
+                                <b class="fluctuate fluctuate_list"><b class="text-info">+</b>25,500</b>
+                                <span class="payment payment_list">우리</span>
+                            </li>
+                            <li>
+                                <span class="date date_list">11일</span>
+                                <b class="detail detail_list">마트</b>
+                                <b class="fluctuate fluctuate_list"><b class="text-danger">-</b>25,500</b>
+                                <span class="payment payment_list">우리</span>
                             </li>
                         </ul>
                     </div>
@@ -149,38 +170,11 @@
                         </tr>
                         
                     </tbody>
-                    <tfoot>
-                        <tr id="bankInput">
-                            <td class="date dateTd dateInput">
-                                <input type="number" th:field="*{date}">
-                            </td>
-                            <td class="detail detailTd detailInput">
-                                <input type="text" th:field="*{detail}">
-                            </td>
-                            <td class="expense expenseTd expenseInput">
-                                <input type="number" th:field="*{expense}">
-                            </td>
-                            <td class="income incomeTd incomeInput">
-                                <input type="number" th:field="*{income}">
-                            </td>
-                            <td class="large largeTd largeInput">
-                                <input type="text" th:field="*{major}">
-                            </td>
-                            <td class="small smallTd smallInput">
-                                <input type="text" th:field="*{sub}">
-                            </td>
-                            <td class="way wayTd wayInput">
-                                <select name="way" id="bankway">
-                                    <option>은행선택</option>
-                                    <option th:each="way : ${state.assets}" th:if="${not way.type.equals('credit')}" th:value="${way.name}" th:text="${way.name}"></option>
-                                </select>
-                            </td>
-                        </tr>
-                </tfoot>
+                    
                 </table>
             </div>
             <div class="calendarRight">
-                <h3>신용카드-일시불</h3>
+                <h3 class="credit">신용카드-일시불</h3>
                 <div class="detail_box credit_dir">
                     <div class="detail_head">
                         <div>일자</div>
@@ -243,33 +237,7 @@
                             <td class="way wayTd">삼성</td>
                         </tr>
                     </tbody>
-                    <tfoot>
-
-                        <tr id="creditInput">
-                            <td class="date dateTd dateInput">
-                                <input type="number" th:field="*{date}">
-                            </td>
-                            <td class="detail detailTd detailInput">
-                                <input type="text" th:field="*{detail}">
-                            </td>
-                            <td class="expense expenseTd expenseInput">
-                                <input type="number" th:field="*{expense}">
-                            </td>
-                            <td class="large largeTd largeInput">
-                                <input type="text" th:field="*{major}">
-                            </td>
-                            <td class="small smallTd smallInput">
-                                <input type="text" th:field="*{sub}">
-                            </td>
-                            <td class="way wayTd wayInput">
-                                <select name="way" id="creditway">
-                                    <option>카드선택</option>
-                                    <option th:each="way : ${state.assets}" th:if="${way.type.equals('credit')}" th:value="${way.name}" th:text="${way.name}"></option>
-                                </select>
-                            </td>
-                        </tr>
-
-                </tfoot>
+                    
                 </table>
 
                 <h3 class="creditDivisionTitle" id="creditDivAdd">신용카드-할부</h3>
@@ -339,36 +307,7 @@
                             <td class="creditTotal creditTotalTd currency">1910000</td>
                         </tr>
                     </tbody>
-                    <tfoot>
-
-                        <tr id="creditD"  style="display:none;">
-                            <td class="detail detailTd" >
-                                <input type="text" name="detail" id="creditDdetail">
-                            </td>
-                            <td class="expense expenseTd">
-                                <input type="number" name="expense" id="creditDexpense" value="0">
-                            </td>
-                            <td class="creditCard creditCardTd">
-                                <select name="way" id="creditDcard">
-                                    <option>카드선택</option>
-                                    <option th:each="way : ${state.assets}" th:if="${way.type.equals('credit')}" th:value="${way.name}" th:text="${way.name}"></option>
-                                </select>
-                            </td>
-                            <td class="dividMonth dividMonthTd">
-                                <input type="number" name="plan" id="creditDmonth">
-                            </td>
-                            <td class="creditCount creditCountTd">
-                                <input type="number" name="count" id="creditDcount">
-                            </td>
-                            <td class="remain remainTd">
-                                <input type="number" name="remain" id="creditDmain">
-                            </td>
-                            <td class="creditTotal creditTotalTd">
-                                <input type="number" name="total" id="creditDtotal">
-                            </td>
-                        </tr>
-    
-                    </tfoot>
+                    
                 </table>
             </div>
         </div>
@@ -402,33 +341,7 @@
                         <td class="loansBalance">2,344,354</td>
                     </tr>
                 </tbody>
-                <tfoot>
-                    <form name="loansFm" id="loansFm" method="post" action="/loansKeep">
-                    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
-                        <input type="hidden" name="year">
-                        <input type="hidden" name="month">
-                        <tr id="loansInput" style="display:none;">
-                            <td class="loansDate">
-                                <input type="number" name="date" id="loandate">
-                            </td>
-                            <td class="loansBank">
-                                <input type="text" name="finance" id="loanbank">
-                            </td>
-                            <td class="loansPayment">
-                                <input type="number" name="expense" id="loanpayment" value="0">
-                            </td>
-                            <td class="loansCount">
-                                <input type="number" name="count" id="loancount">
-                            </td>
-                            <td class="loansAccount">
-                                <input type="text" name="payment" id="loanaccount">
-                            </td>
-                            <td class="loansBalance">
-                                <input type="number" name="balance" id="loanbalance" value="0">
-                            </td>
-                        </tr>
-                    </form>
-                </tfoot>
+                
             </table>
         </div>
 
@@ -505,14 +418,14 @@
                 <div class="allW date_input"> <!--날짜-->
                     <label>날짜</label><input type="date" th:field="*{date}">
                 </div>
-                <div class="detail_input cash_write credit_write credit_dvdWrite noneAttr"><!--내역-->
+                <div class="detail_write cash_write credit_write credit_dvdWrite noneAttr"><!--내역-->
                     <label>내역</label><input type="text" th:field="*{detail}">
                 </div>
                 <div class="expense_write cash_write credit_write credit_dvdWrite noneAttr"><!--지출 수입-->
-                    <label>지출</label><input type="number" th:field="*{expense}">
+                    <label class="text-danger fw-bold">지출</label><input type="number" th:field="*{expense}">
                 </div>
-                <div class="income_write cash_write credit_write credit_dvdWrite noneAttr"><!--지출 수입-->
-                    <label>수입</label><input type="number" th:field="*{income}">
+                <div class="income_write cash_write  noneAttr"><!--지출 수입-->
+                    <label class="text-primary fw-bold">수입</label><input type="number" th:field="*{income}">
                 </div>
                 <div class="major_write cash_write credit_write credit_dvdWrite noneAttr"><!--분류1-->
                     <label>분류</label><input type="text">
@@ -520,32 +433,29 @@
                 <div class="sub_write cash_write credit_write credit_dvdWrite noneAttr"><!--분류2-->
                     <label>분류</label><input type="text">
                 </div>
-                <div class="payment_write credit_write credit_dvdWrite noneAttr"><!--카드사-->
-                    <label></label><input type="text">
-                </div>
                 <div class="installment_write  credit_dvdWrite noneAttr"><!--분할-->
-                    <input type="number">
+                    <label>분할</label><input type="number">
                 </div>
                 <div class="remain_write loans_write credit_dvdWrite noneAttr"><!--남은 금액-->
-                    <input type="number">
+                    <label>남은금액</label><input type="number">
                 </div>
                 <div class="total_write credit_dvdWrite noneAttr"><!--총금액-->
-                    <input type="number">
+                    <label>총금액</label><input type="number">
                 </div>
                 <div class="financial_write loans_write noneAttr"><!-- 금융사 -->
-                    <input type="text">
+                    <label>금융사</label><input type="text">
                 </div>
                 <div class="repayment_write loans_write noneAttr"><!-- 결제금 -->
-                    <input type="number">
+                    <label>결제금</label><input type="number">
                 </div>
                 <div class="count_write loans_write noneAttr"><!--회차-->
-                    <input type="number">
+                    <label>회차</label><input type="number">
                 </div>
                 <div class="withdraw_write loans_write noneAttr"><!--출금계좌-->
-                    <input type="text">
+                    <label>출금계좌</label><input type="text">
                 </div>
 
-                <div class="payment detail_input">
+                <div class="payment_write cash_write credit_write credit_dvdWrite noneAttr">
                     <select name="way" id="bankway">
                         <option>은행선택</option>
                         <option th:each="way : ${state.assets}" th:if="${not way.type.equals('credit')}" th:value="${way.name}" th:text="${way.name}"></option>
@@ -582,11 +492,6 @@
                     alert("카드분할");
                 }
     });
-       
-    $("#creditDivAdd").on("click",function(){ $("#creditD").toggle(); });
-    $("#loansAdd").on("click",function(){ $("#loansInput").toggle(); });
-
-
     
     $("#loansInput").on("keyup",function(e){
                 if(e.keyCode == 13){

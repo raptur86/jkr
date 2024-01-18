@@ -34,6 +34,9 @@
     line-height:30px;
     text-align:center;
 }
+.detail_box .detail_list .detail_list_frame > li >span,.detail_box .detail_list .detail_list_frame > li >b{
+    display:inline-block;
+}
 .detail_box .date{    width:14%; }
 .detail_box .detail{     width:35%; }
 .detail_box .fluctuate{    width:31%; }
@@ -41,11 +44,17 @@
 
 .detail_box .detail_head>div:nth-child(2){border-left:1px solid #aaa;}
 .detail_box .detail_head>div:nth-child(3){border-left:1px solid #aaa;
-    border-right:1px solid #aaa;}
+    border-right:1px solid #aaa;
+}
 
 
-.detail_box .detail_list{
-
+.detail_box .detail_list .detail_list_frame li{
+    display:flex;
+    width:100%;
+    text-align: center;
+}
+.detail_box .detail_list .detail_list_frame .fluctuate{
+    text-align: left;
 }
 
 .cldTable{
@@ -182,7 +191,7 @@
 #write_modal #detail_write{
     position:absolute;
     background:#00f3a2;
-    padding:15px;
+    padding:40px;
     border-radius: 10px;
     width:90%;
     top:50%;
@@ -193,13 +202,29 @@
 
 #detail_write .shell{
     display:flex;
-    flex-direction: column;
+    flex-wrap:wrap;
     row-gap:7px;
+    justify-content: space-between;
 }
 #detail_write .shell label{
     display:inline-block;
     padding-right:5px;
+    width:55px;
 }
+.shell div{width:100%;}
+.shell input{
+    width:calc(100% - 55px);
+    padding-left:5px;
+    height:35px;
+    border:0;
+    border-radius: 10px;;
+}
+
+.shell .expense_write, .shell .income_write{
+    width:48%;
+}
+
+
 #detail_write .shell .noneAttr{
     display:none;
 }
