@@ -497,60 +497,60 @@
 <div id="write_modal">
     <div id="write_bg"></div>
     <div id="detail_write">
-        <form name="loansFm" id="loansFm" method="post" action="/loansKeep">
+        <form name="useFm" id="useFm" method="post" action="">
             <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
             <input type="hidden" name="year">
             <input type="hidden" name="month">
-            <div class="allW date_input"> <!--날짜-->
-                <input type="number" th:field="*{date}">
-            </div>
-            <div class="detail_input cash_write credit_write credit_dvdWrite noneAttr"><!--내역-->
-                <input type="text" th:field="*{detail}">
-            </div>
-            <div class="expense_write cash_write credit_write credit_dvdWrite noneAttr"><!--지출 수입-->
-                지출
-                <input type="number" th:field="*{expense}">
-            </div>
-            <div class="income_write cash_write credit_write credit_dvdWrite noneAttr"><!--지출 수입-->
-                수입
-                <input type="number" th:field="*{income}">
-            </div>
-            <div class="major_write cash_write credit_write credit_dvdWrite noneAttr"><!--분류1-->
-                <input type="text">
-            </div>
-            <div class="sub_write cash_write credit_write credit_dvdWrite noneAttr"><!--분류2-->
-                <input type="text">
-            </div>
-            <div class="payment_write credit_write credit_dvdWrite noneAttr"><!--카드사-->
-                <input type="text">
-            </div>
-            <div class="installment_write  credit_dvdWrite noneAttr"><!--분할-->
-                <input type="number">
-            </div>
-            <div class="remain_write loans_write credit_dvdWrite noneAttr"><!--남은 금액-->
-                <input type="number">
-            </div>
-            <div class="total_write credit_dvdWrite noneAttr"><!--총금액-->
-                <input type="number">
-            </div>
-            <div class="financial_write loans_write noneAttr"><!-- 금융사 -->
-                <input type="text">
-            </div>
-            <div class="repayment_write loans_write noneAttr"><!-- 결제금 -->
-                <input type="number">
-            </div>
-            <div class="count_write loans_write noneAttr"><!--회차-->
-                <input type="number">
-            </div>
-            <div class="withdraw_write loans_write noneAttr"><!--출금계좌-->
-                <input type="text">
-            </div>
+            <div class="shell">
+                <div class="allW date_input"> <!--날짜-->
+                    <label>날짜</label><input type="date" th:field="*{date}">
+                </div>
+                <div class="detail_input cash_write credit_write credit_dvdWrite noneAttr"><!--내역-->
+                    <label>내역</label><input type="text" th:field="*{detail}">
+                </div>
+                <div class="expense_write cash_write credit_write credit_dvdWrite noneAttr"><!--지출 수입-->
+                    <label>지출</label><input type="number" th:field="*{expense}">
+                </div>
+                <div class="income_write cash_write credit_write credit_dvdWrite noneAttr"><!--지출 수입-->
+                    <label>수입</label><input type="number" th:field="*{income}">
+                </div>
+                <div class="major_write cash_write credit_write credit_dvdWrite noneAttr"><!--분류1-->
+                    <label>분류</label><input type="text">
+                </div>
+                <div class="sub_write cash_write credit_write credit_dvdWrite noneAttr"><!--분류2-->
+                    <label>분류</label><input type="text">
+                </div>
+                <div class="payment_write credit_write credit_dvdWrite noneAttr"><!--카드사-->
+                    <label></label><input type="text">
+                </div>
+                <div class="installment_write  credit_dvdWrite noneAttr"><!--분할-->
+                    <input type="number">
+                </div>
+                <div class="remain_write loans_write credit_dvdWrite noneAttr"><!--남은 금액-->
+                    <input type="number">
+                </div>
+                <div class="total_write credit_dvdWrite noneAttr"><!--총금액-->
+                    <input type="number">
+                </div>
+                <div class="financial_write loans_write noneAttr"><!-- 금융사 -->
+                    <input type="text">
+                </div>
+                <div class="repayment_write loans_write noneAttr"><!-- 결제금 -->
+                    <input type="number">
+                </div>
+                <div class="count_write loans_write noneAttr"><!--회차-->
+                    <input type="number">
+                </div>
+                <div class="withdraw_write loans_write noneAttr"><!--출금계좌-->
+                    <input type="text">
+                </div>
 
-            <div class="payment detail_input">
-                <select name="way" id="bankway">
-                    <option>은행선택</option>
-                    <option th:each="way : ${state.assets}" th:if="${not way.type.equals('credit')}" th:value="${way.name}" th:text="${way.name}"></option>
-                </select>
+                <div class="payment detail_input">
+                    <select name="way" id="bankway">
+                        <option>은행선택</option>
+                        <option th:each="way : ${state.assets}" th:if="${not way.type.equals('credit')}" th:value="${way.name}" th:text="${way.name}"></option>
+                    </select>
+                </div>
             </div>
         </form>
     </div>

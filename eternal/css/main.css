@@ -188,13 +188,24 @@
     top:50%;
     left:50%;
     transform: translate(-50%,-50%);
+    color:#000;
 }
 
-
-
-#detail_write .noneAttr{
+#detail_write .shell{
+    display:flex;
+    flex-direction: column;
+    row-gap:7px;
+}
+#detail_write .shell label{
+    display:inline-block;
+    padding-right:5px;
+}
+#detail_write .shell .noneAttr{
     display:none;
 }
+
+
+
 
 #foot_wrap{
     margin-top:50px;
