@@ -1,43 +1,30 @@
-$("#cashCheck").on("click",function(){  
-    $("#write_modal").show(); 
-    $("#useFm").attr("action","");
-    $(".credit_write").addClass("noneAttr");
-    $(".credit_dvdWrite").addClass("noneAttr");
-    $(".loans_write").addClass("noneAttr");
-    $(".cash_write").removeClass("noneAttr");
-})
 
-$("#credit").on("click",function(){
-    $("#write_modal").show(); 
-    $("#useFm").attr("action","");
-    $(".cash_write").addClass("noneAttr");
-    $(".credit_dvdWrite").addClass("noneAttr");
-    $(".loans_write").addClass("noneAttr");
-    $(".credit_write").removeClass("noneAttr");
-});
-$("#creditDivAdd").on("click",function(){ 
-    $("#write_modal").show(); 
-    $("#useFm").attr("action","");
-    $(".cash_write").addClass("noneAttr");
-    $(".credit_write").addClass("noneAttr");
-    $(".loans_write").addClass("noneAttr");
-    $(".credit_dvdWrite").removeClass("noneAttr");
-});
-$("#loansAdd").on("click",function(){ 
-    $("#write_modal").show(); 
-    $("#useFm").attr("action","");
-    $(".cash_write").addClass("noneAttr");
-    $(".credit_write").addClass("noneAttr");
-    $(".credit_dvdWrite").addClass("noneAttr");
-    $(".loans_write").removeClass("noneAttr");
-});
 
-$("#write_bg").on("click",function(){
-    $("#write_modal").hide();
-});
+
+
+$("#cashCheck").on("click",function(){  write_show("cash_write","","cashCheckOp");  })
+
+$("#credit").on("click",function(){    write_show("credit_write","","creditOp");  });
+$("#creditDivAdd").on("click",function(){     write_show("credit_dvdWrite","","creditOp");  });
+$("#loansAdd").on("click",function(){     write_show("loans_write","",null);  });
+
+$("#write_bg").on("click",function(){    $("#write_modal").hide();  });
 
 $(".shell label").each(function(i,v){
     var len = $(this).text().length;
     if(len>2)
         $(this).css("font-size",50/len+"px");
 });
+
+
+function write_show(target , action, payment_sel){
+    $("#write_modal").show(); 
+    $("#useFm").attr("action",action);
+    $(".write").addClass("noneAttr");
+    $("."+target).removeClass("noneAttr");
+
+    if(payment_sel != null){
+        $("#bankway option").hide();
+        $("."+payment_sel).show();
+    }
+}
