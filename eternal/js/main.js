@@ -28,3 +28,8 @@ function write_show(target , action, payment_sel){
         $("."+payment_sel).show();
     }
 }
+
+
+function detail(){
+    location.href="detail.html";
+}
