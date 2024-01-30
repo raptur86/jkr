@@ -85,7 +85,7 @@ body{
     text-align: center;
 }
 .menuWrap{
-    padding:20px 0;
+    padding:0 0;
     width:100%;
     position:relative;
     /* display: flex; */
@@ -95,8 +95,7 @@ body{
     margin:0 auto;
     /* position:absolute; */
     text-align: center;
-    padding-bottom:20px;
-    /* left:0; */
+    padding:10px 0;
 }
 .selectCalendar input[type=month]{padding:3px 8px;}
 .menu{
@@ -104,8 +103,21 @@ body{
     display:flex;
     justify-content: center;
     align-items: center;
+    position:relative;
+}
+.menu_icon{
+    position:absolute;
+    left:0;
+    top:-40px;
+    font-size:17px;
 }
 
+.menu_btn{
+    display:none;
+}
+.menu_icon:hover ~ .menu_btn{
+    display:inline-flex;
+}
 
 #content{
     width:100%;
