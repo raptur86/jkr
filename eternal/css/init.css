@@ -108,16 +108,15 @@ body{
 .menu_icon{
     position:absolute;
     left:0;
-    top:-40px;
+    top:50%;
+    transform: translateY(-50%);
     font-size:17px;
 }
 
 .menu_btn{
     display:none;
 }
-.menu_icon:hover ~ .menu_btn{
-    display:inline-flex;
-}
+
 
 #content{
     width:100%;

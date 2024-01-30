@@ -1,5 +1,11 @@
 
+$(function(){
 
+    $(".menu_icon").on("click",function(){
+        $(".menu_btn").toggle();
+    });
+
+});
 
 
 $("#cashCheck").on("click",function(){  write_show("cash_write","","cashCheckOp");  })
